@@ -1,0 +1,25 @@
+Creating the Table
+
+ CREATE TABLE IF NOT EXISTS statusform (
+    stcode VARCHAR(5) PRIMARY KEY,
+    st VARCHAR(30) NOT NULL,
+    share VARCHAR(30) NOT NULL,
+    date DATE NOT NULL,
+    permission VARCHAR(255) DEFAULT 'none');
+
+Select to check status code 
+
+SELECT * FROM statusform WHERE stcode = '$stcode'
+
+Insert into(for inserting data)
+
+INSERT INTO statusform (stcode, st, share, date, permission) 
+VALUES ('$stcode', '$st', '$share', '$date', '$permission_string')
+
+Query to search for status
+
+$sql = "SELECT * FROM statusform WHERE stcode LIKE '%$search_query%'";
+
+Drop Table 
+
+DROP TABLE statusform
